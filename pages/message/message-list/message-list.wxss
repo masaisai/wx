@@ -1,0 +1,27 @@
+/* pages/message/message-list/message-img-list.wxss */
+page{height:100%}
+.container{height:100%;}
+scroll-view{height:100%}
+.message-list{font-size:24rpx;padding-top:50rpx;padding-bottom:0rpx}
+.message-list-item{width:660rpx;margin:0 auto 30rpx;background:white;border-radius:10rpx;overflow:hidden}
+.message-list-item label{width:600rpx;padding:26rpx 30rpx;display:block}
+.message-list-item checkbox{display:none;position:absolute;top:20rpx;right:30rpx;transform:scale(0.7,0.7);width:40rpx;height:40rpx;}
+.message-list-item .top{line-height:50rpx;margin-bottom:20rpx;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%}
+.message-list-item .top .title{width:83%;float:left;font-size:26rpx;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.message-list-item .top .title .point{width:8rpx;height:8rpx;border-radius:50%;background: red;display:inline-block;margin:0rpx 10rpx;vertical-align:middle;position:relative;top:-2rpx}
+.message-list-item .top .title .tip{}
+.message-list-item .top .date{width:13%;float:right;text-align:right;color:#bbb;font-size:24rpx}
+.message-list-item .middle{line-height:36rpx;font-size:24rpx;color:#999;text-align:left;padding-bottom:20rpx}
+.message-list-item .bottom{line-height:50rpx;height:50rpx;padding-top:20rpx;border-top:1rpx solid #eee}
+.message-list-item .bottom .more{width:400rpx;float:left;color:#0062f6;font-size:24rpx;text-align:left}
+.message-list-item .bottom .arrow{width:50rpx;height:50rpx;line-height:50rpx;text-align:center;float:right;color:#999;font-size:24rpx}
+.message-list-item.read{color:#999}
+.message-list-item.read .top .title .point{background:#999}
+.bg{width:640rpx;background:white;border-radius:10rpx;margin:0rpx auto 30rpx;overflow:auto;padding:0 10rpx}
+.message-list.edit-mode .message-list-item .top,.message-list.edit-mode .message-list-item .middle,.message-list.edit-mode .message-list-item .bottom{
+width:530rpx
+}
+.edit-mode .message-list-item checkbox{display:block}
+.edit-tools{width:400rpx;height:70rpx;position:fixed;left:175rpx;bottom:50rpx;background:white;border-radius:35rpx;box-shadow:0rpx 5rpx 20rpx rgba(0, 0,0, 0.3);text-align:center}
+.edit-tools .tool{font-size:26rpx;display:inline-block;padding:0 40rpx;line-height:70rpx;color:#333}
+.edit-tools .tool .iconfont{font-size:28rpx;margin-right:10rpx;color:#0062f6}

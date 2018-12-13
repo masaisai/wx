@@ -1,0 +1,24 @@
+<!--pages/auth/auth.wxml-->
+<view class='container'>
+<view class='login-logo'>
+  <block>
+      <image src="../../images/logo.png" background-size="cover"></image>
+    </block>
+</view>
+<form bindsubmit="submit" report-submit='true' >
+<text class='errorMes'>{{errorMes}}</text>
+<view class="form-group">
+<view class='label'>
+  <view class='iconfont icon-xingmingyonghumingnicheng'></view>
+</view>
+<input type='text'  data-type="usercode" class='form-control {{focusStyle.usercodeFocus?"focus":""}}' bindfocus="inputfocus" bindblur="inputblur" bindinput='clearError'  name='usercode' placeholder='用户名' placeholder-class="form-control-placeholder"/>
+</view>
+<view class="form-group">
+<view class='label'>
+  <view class='iconfont icon-mima'></view>
+</view>
+<input type='password' data-type="password" class='form-control {{focusStyle.passwordFocus?"focus":""}}' bindfocus="inputfocus" bindblur="inputblur" name='password' bindinput='clearError' placeholder='密码' placeholder-class="form-control-placeholder"/>
+</view>
+<button form-type="submit"  open-type="getUserInfo" bindgetuserinfo='getUserInfo' class='default' disabled='{{btnDisable}}' >提 交</button>
+</form>
+</view>

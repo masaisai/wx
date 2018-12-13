@@ -1,0 +1,49 @@
+<!--pages/daily/add-daily/add-daily.wxml-->
+<view class='container'>
+  <view class='bg' style="height:{{cardHeight}}">
+    <form bindsubmit="formSubmit"  report-submit='true'>
+  <view class='section'>
+<view class='label'> <text class="iconfont icon-gongchengxiangmu"></text>所属项目：</view>
+<view class='content proname' bindtap='selectProject' style='height:60rpx;overflow:hidden'> <button form-type="submit" class='wrap-btn' plain="true" hover-class="none" data-type='button'>{{proname}}</button></view>
+<view wx:if='{{type=="add"}}' class='iconfont arrow icon-xiangyou' bindtap='selectProject'></view>
+  </view>
+   <view class='section'>
+   <picker mode="date" bindchange="bindDateChange" start="2015-09-01" end="2022-09-01" value="{{date}}">
+    <view class="label"><text class="iconfont icon-riqi"></text>日期：</view>
+    <view class='content'>
+      {{date}}
+    </view>
+    <view class='iconfont arrow icon-xiangyou'></view>
+  </picker>
+  </view>
+   <view class='section'>
+   
+   <picker  bindchange="bindProTypeChange"  value="{{protypeIndex}}" range="{{protypeArry}}">
+    <view class="label"><text class="iconfont icon-jieduan"></text>任务类型：</view>
+    <view class='content'>
+      {{protypeArry[protypeIndex]}}
+    </view>
+     <view class='iconfont arrow icon-xiangyou'></view>
+      
+  </picker>
+ 
+  </view>
+  <view class='section'>
+    <view class="label"><text class="iconfont icon-haoshi"></text>耗时：</view>
+    <view class='content'>
+      <input class='form-control' type='digit' style='width:200rpx;float:left' placeholder='请输入项目耗时' name='consume' value='{{consume}}'></input>
+      <view style='display:inline-block;float:left;height:60rpx;padding-left:20rpx'>h</view>
+    </view>
+  </view>
+  <view class='section'>
+    <view class="label"><text class="iconfont icon-content"></text>内容：</view>
+    <view class='content'>
+       <textarea  class='textarea' maxlength='-1' auto-height='true' placeholder='请输入日报内容' name='content' value='{{content}}'/>
+    </view>
+  </view>
+  <button form-type="submit" type="primary" wx:if='{{type=="edit"}}' class='primary-round' disabled='{{btnDisable}}' style='margin-top:60rpx'>完 成</button>
+  <button bindtap='back' class='default-round' plain='true' wx:if='{{type=="edit"}}' style='margin-top:60rpx'>取 消</button>
+  <button form-type="submit" type="primary" wx:else class='primary-round' disabled='{{btnDisable}}' style='margin-top:60rpx'>提 交</button>
+  </form>
+  </view>
+</view>

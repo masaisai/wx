@@ -1,0 +1,74 @@
+<!--pages/license/license.wxml-->
+<view class='container'>
+ <form bindsubmit="formSubmit"  report-submit='true'>
+<swiper indicator-dots="{{indicatorDots}}" circular='{{circular}}'  bindanimationfinish='swiperChange'  style="height:{{cardHeight}}">
+      <swiper-item wx:for='{{licenseData}}'>
+         <view class='swiper-item' >
+   <view class='license'>
+   <!--top start-->
+      <view class='top'>
+          <view class='userInfo'>
+              <block><image  src="{{item.head}}" class="avatar" background-size="cover"></image></block>
+              <view class='usercon'>
+              <view class='username'>{{item.usercode}}</view>
+              <view class='labels'>
+              <view class='label'>{{item.online}}</view>
+               <view class='label'>{{item.usertype}}</view>
+            </view>
+            </view>
+            </view>
+
+            
+            <view class='content'>{{item.description}}</view>
+      </view>
+  <!--top end-->
+
+
+      <!--bottom start-->
+      <view class='bottom'>
+         <view class='section'>
+   <picker class='clearfix'  bindchange="bindEditionChange" data-index="{{index}}"  value="{{item.version}}" range="{{editionArray}}">
+    <view class="label"><text class="iconfont icon-banbenpeizhi"></text>版本：</view>
+    <view class='content'>
+      {{editionArray[item.version||'0']}}
+    </view>
+     <view class='iconfont arrow icon-xiangyou'></view>
+  </picker>
+  </view>
+  <view class='section'>
+    <view class="label"><text class="iconfont icon-mimakuang"></text>授权码：</view>
+    <view class='content'>
+      <input class='form-control' type='password' style='width:400rpx;float:left;height:60rpx' placeholder='请输入授权码' name='password{{index}}' value=''></input>
+    </view>
+  </view>
+              <button type="primary" data-id='{{item.id}}' data-index='{{index}}' data-type='success' data-version='{{item.version||"0"}}' form-type="submit" class='primary-round' size="default" style='margin-bottom:30rpx;margin-top:60rpx'>通过</button>
+             <button  class='default-round' data-id='{{item.id}}' data-index='{{index}}' data-type='refuse' data-version='{{item.version||"0"}}' form-type="submit" size="default" style='margin-bottom:30rpx' plain='true'>驳回</button>
+
+      </view>
+<!--bottom end-->
+
+       </view>
+      </view>
+    </swiper-item>
+   <swiper-item>
+        <view class='swiper-item loading-wrap'>
+          <view class='loading' wx:if='{{loading}}'>
+            <block>
+              <image  src='../../images/loading.gif'></image>
+            </block>
+          </view>
+          <view class='loading' wx:else>
+          <block>
+              <image  src='../../images/nodata.png'></image>
+            </block>
+           <view style="padding-top:20rpx">已经没有数据了!</view>
+          </view>
+        </view>
+        
+      </swiper-item>
+  </swiper>
+  <view class='pageNumber'>{{pageNumber}} / {{total}}</view>
+   </form>
+</view>
+
+

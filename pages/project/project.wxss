@@ -1,0 +1,49 @@
+/* pages/project/project.wxss */
+page{height:100%}
+.container{padding:0;font-size:26rpx;padding-top:100rpx;position:relative;}
+.searchBar{width:750rpx;height:100rpx;position:fixed;left:0;top:0;z-index:2;}
+.scrollCon{height:100%;}
+.container .search{width:660rpx;height: 80rpx;margin:20rpx auto 0;background:white;line-height:80rpx;border-radius:8rpx;overflow:hidden}
+.container .search-left{ width:660rpx;float:left; background: #fff;text-align:left}
+.container .search-left input{display:block; height: 80rpx;font-size: 26rpx; width:500rpx;padding:0 20rpx;color:#333;float:left}
+.search-placeholder{ color: #333;line-height: 20rpx;z-index:0}
+.container .search .search-left button{display:block;width:79rpx;float:left}
+
+
+button.searchBtn{border:0px solid transparent;font-size:32rpx!important;outline:none!important;color:#333;line-height:80rpx;border-radius:0}
+button.scanBtn{border:0px solid transparent;font-size:32rpx!important;outline:none!important;color:#333;line-height:78rpx}
+
+.swiper-container{width:750rpx;padding-top:50rpx}
+.swiper-container swiper{width:750rpx;}
+.swiper-container swiper-item{width:750rpx;}
+.swiper-container .swiper-item{width:660rpx;height:100%;background:white;border-radius:10rpx;margin:0 auto;overflow:hidden}
+
+.project{position:relative;height:100%}
+.project .top{padding:30rpx;padding-bottom:132rpx;height:100%;box-sizing:border-box;}
+.project .top .top-content{height:100%;overflow:auto }
+.project .top .procode{color:#999;text-align:left;line-height:40rpx;margin-bottom:30rpx}
+.project .top .procode .iconfont{margin-right:10rpx;font-size:28rpx}
+.project .top .protitle{text-align:center;font-size:28rpx;color:#333;line-height:40rpx;margin-bottom:30rpx}
+.project .top .protitle .proname{display:inline-block}
+.project .top .protitle .qrcode{display:inline-block;margin-left:20rpx}
+.project .top .protitle .qrcode .iconfont{color:#3D8EED}
+.project .top .labels{text-align:center;margin-bottom:40rpx}
+.project .top .labels .label{padding:2px 6px;display:inline-block;margin:0 10rpx;background:#D6EEF8;color:#57B7E1;font-size:26rpx;}
+.project .top .description{color:#999;font-size:26rpx;line-height:36rpx;margin-bottom:40rpx}
+.project .top .raty{color:#999}
+.project .top .raty text{color:#5B76F5}
+.project .top .ratyBar{margin-bottom:50rpx;margin-left:0}
+.project .top .progress{width:530rpx;height:30rpx;margin:30rpx 0 40rpx;padding-left:20rpx}
+.project .top .progressBar{width:450rpx;height:20rpx;background:#eee;border-radius:10rpx;overflow:hidden;display:block;float:left;top:5rpx;position:relative}
+.project .top .progresCon{width:0;height:20rpx;background:#3e8ef7;display:block;border-radius:10rpx}
+.project .top .progress .number{width:50rpx;float:left;line-height:30rpx;font-size:26rpx;padding-left:20rpx}
+.project .top .member{color:#999}
+.project .top .memberList{padding-top:40rpx;padding-bottom:30rpx}
+.project .top .memberList .member-item{width:60rpx;height:60rpx;float:left;margin:0 15rpx 40rpx;position:relative}
+.project .top .memberList .member-item .head{width:44rpx;height:34rpx;position:absolute;left:7rpx;top:-24rpx}
+.project .top .memberList .member-item .avatar{width:60rpx;height:60rpx;border-radius:50%;overflow:hidden;}
+.project .bottom{position:absolute;left:0;bottom:0;width:100%;z-index:3}
+.project .bottom .bottom-item{width:33.3333%;float:left;background:#F9F9F9;text-align:center;padding:30rpx 0}
+.project .bottom .bottom-item .name{color:#999;line-height:36rpx;font-size:28rpx}
+.project .bottom .bottom-item .num{color:#5B76F5;line-height:36rpx;font-size:28rpx}
+.canvas{width:100%;height:150px}

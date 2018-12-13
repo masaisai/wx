@@ -1,0 +1,134 @@
+<!--pages/daily/all-daily/all-daily.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'>
+<view class='container'>
+<!--topBar start-->
+<!--topBar end-->
+<!--search start-->
+<view class='searchBar'>
+  <view class="search">
+       <button class='searchBtn' plain="true"  bindtap='search'><text class="iconfont icon-search01" ></text></button>
+          <input placeholder="请输入姓名" confirm-type='search' bindinput="bindKeyInput" bindconfirm="inputConfirm" placeholder-class="search-placeholder"/>
+  </view>
+</view>
+<!--search end-->
+
+<!--daily start-->
+<view class="scrollCon">
+  <view class='swiper-container'>
+    <swiper indicator-dots="{{indicatorDots}}" circular='{{circular}}' duration='{{duration}}' current='{{currentIndex}}'  bindanimationfinish='swiperChange' bindchange='record'  style="height:{{cardHeight}}" >
+      <swiper-item wx:if='{{loading1}}'>
+        <view class='swiper-item loading-wrap'>
+          <view class='loading'>
+            <block>
+              <image  src='../../../images/loading.gif'></image>
+            </block>
+          </view>
+        </view>
+        
+      </swiper-item>
+       <swiper-item wx:for='{{dailyData}}' wx:key='id'  wx:for-item="item">
+        <view class='swiper-item'>
+          <!--daily read start-->
+          <view class='daily read'>
+
+           <!--daily top start-->
+            <view class='top'>
+            <view class='top-content'>
+              <view class='topMes clearfix'>
+              <view class='userInfo'>
+              <block><image  src="{{item.head}}" class="avatar" background-size="cover"></image></block>
+              <view class='userCon'>
+                <view class='username'>{{item.name}}</view>
+                <view class='time'>{{item.workday}}</view>
+              </view>
+            </view>
+              <view class='status'>已审批</view>
+            </view>
+
+            <view class='proname'>{{item.proname}}</view>
+            <view class='content'>{{item.content}}</view>
+           <!-- <view class='consume'>
+              <view class='title'><text class='iconfont icon-riqi'></text>日期</view>
+              <view class='con'>{{item.workday}}</view>
+            </view>-->
+            <view class='protype'>
+              <view class='title'><text class='iconfont icon-jieduan'></text>类型</view>
+              <view class='con'>{{item.tasktype}}</view>
+            </view>
+            <view class='consume'>
+              <view class='title'><text class='iconfont icon-haoshi'></text>耗时</view>
+              <view class='con'>{{item.consume}} h</view>
+            </view>
+            <!--#eb6709-->
+            <view class='parise clearfix'>
+              <view class='pariseBtn' bindtap='giveliked' data-id='{{item.id}}' data-state='{{item.state}}' data-index='{{index}}'>
+               <button form-type="submit" class='wrap-btn' plain="true"  hover-class="none">
+             
+              <text wx:if='{{item.isheats==1}}' class='iconfont icon-xin' style='color:red'></text>
+                <text wx:else class='iconfont icon-xin1'></text><text style="font-size:26rpx!important;color:#999">（{{item.heatsamount}}）</text>
+                </button>
+              </view>
+              <view class='parisePeople'>
+                <view class='pariseItem' wx:for='{{item.readheads}}'  wx:for-item="headItem">
+                  <block>
+                    <image wx:if="{{index<3}}"  src="{{headItem}}" background-size="cover"></image>
+                  </block>
+                </view>
+               
+              </view>
+            </view>
+
+            <view class='comment'>
+              <view class='comment-title'>评论（{{item.replysamount}}）</view>
+              <view class='comment-content clearfix'>
+                <view class='comment-item clearfix' wx:for='{{item.replys}}'  wx:for-item="replyItem" wx:if='{{!replyItem.fid}}'>
+                  <block><image  src="{{replyItem.fromuserhead}}" class="avatar" background-size="cover"></image></block>
+                  <view class='comment-main'>
+                    <view class='comment-name'>{{replyItem.fromusername}}</view>
+                    <view class='comment-message'>{{replyItem.content}}</view>
+                  </view>
+                </view>
+                
+              </view>
+              
+            </view>
+              </view>
+          </view>
+           <!--daily top end-->
+          
+           <!--daily bottom start-->
+         
+            <view class="release">
+              <button type="primary" form-type="submit" class='primary-round' size="default" data-id='{{item.id}}' data-index='{{index}}' bindtap="goComment">发表评论</button>
+            </view>
+         
+          <!--daily bottom end-->
+          </view>
+          <!--daily read end-->
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class='swiper-item loading-wrap'>
+          <view class='loading' wx:if='{{loading}}'>
+            <block>
+              <image  src='../../../images/loading.gif'></image>
+            </block>
+          </view>
+          <view class='loading' wx:else>
+          <block>
+              <image  src='../../../images/nodata.png'></image>
+            </block>
+           <view style="padding-top:20rpx">已经没有数据了!</view>
+          </view>
+        </view>
+        
+      </swiper-item>
+</swiper>
+<view class='pageNumber'>{{pageNumber}} / {{total}}</view>
+  </view>
+</view>
+<!--daily end-->
+<!--<button form-type="submit"  class='circle-btn' plain="true" hover-class="none" bindtap='addDaily'><i class="iconfont icon-add2"></i></button>-->
+</view>
+</form>
+

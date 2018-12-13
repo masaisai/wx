@@ -1,0 +1,16 @@
+<!--pages/message/message-detail/message-detail.wxml-->
+<view class='container'>
+<scroll-view scroll-y>
+<view class='bg'>
+  <view class='title'>{{messageData.title}}</view>
+  <view class='sub'> by  {{messageData.fromname}}  -  {{messageData.sendtime}}</view>
+  <view class='core'>
+  <view class='image' wx:if="{{messageData.image}}">
+    <image src='http://pic5.photophoto.cn/20071228/0034034901778224_b.jpg' data-url='http://pic5.photophoto.cn/20071228/0034034901778224_b.jpg' lazy-load='true' bindtap='previewImag'></image>
+  </view>
+  <view class='content'>{{messageData.content}}</view>
+  </view>
+ <!--  <button form-type="submit" type="primary"  class='primary' style='margin-top:60rpx;margin-bottom:40rpx'>删 除</button>-->
+</view>
+</scroll-view>
+</view>

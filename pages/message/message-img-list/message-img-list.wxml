@@ -1,0 +1,46 @@
+<!--pages/message/message-img-list/message-img-list.wxml-->
+<view class='container'>
+<scroll-view bindscrolltolower='onReachBottom' scroll-y>
+<view class='message-list'>
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class='message-img-list-item'  bindtap='openPage' data-url='../message-detail/message-detail'>
+    <view class='top'>
+      <view class='title'>
+        <text class='point'></text>
+        <text class='tip'>系统消息</text>
+      </view>
+      <view class='date'>01-02</view>
+    </view>
+    <view class='middle'>
+      <image src='http://pic5.photophoto.cn/20071228/0034034901778224_b.jpg' style='width:600rpx' lazy-load='true'></image>
+      <text>测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</text>
+    </view>
+    <view class='bottom'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+      <view class='more'>查看更多</view>
+     <view class='iconfont arrow icon-xiangyou'></view>
+     </button>
+    </view>
+  </view>
+
+  <view class='message-img-list-item read'>
+    <view class='top'>
+      <view class='title'>
+        <text class='point'></text>
+        <text class='tip'>系统消息</text>
+      </view>
+      <view class='date'>01-02</view>
+    </view>
+    <view class='middle'>
+       <image src='http://pic5.photophoto.cn/20071228/0034034901778224_b.jpg' style='width:600rpx' lazy-load='true'></image>
+      <text>测试内容</text>
+    </view>
+    <view class='bottom'>
+      <view class='more'>查看更多</view>
+     <view class='iconfont arrow icon-xiangyou'></view>
+    </view>
+  </view>
+  </form>
+</view>
+</scroll-view>
+</view>

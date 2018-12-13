@@ -1,0 +1,55 @@
+<view class='container'>
+  <!--<view class='ranking'>
+    <view class='num'>{{ranking}}</view>
+    <view class='text'>排名</view>
+  </view>
+
+  <view class='overtime clearfix'>
+    <view class='overtime-item'>
+      <view class='title'>次数</view>
+      <view class='num'>{{times}}</view>
+      <view class='line'></view>
+    </view>
+    <view class='overtime-item'>
+      <view class='title'>总工时</view>
+      <view class='num'>{{hours}} h</view>
+    </view>
+  </view>
+-->
+  <view class='bg'>
+  <view class='circle'>
+    <view class='title'>总工时(h)</view>
+    <view class='number'>{{hours}}</view>
+    <view class='unread'><text>未审核 </text><text style='color:red'>{{times}}</text></view>
+  </view>
+    <form bindsubmit="formSubmit"  report-submit='true'>
+   <view class='section'>
+   <picker mode="date" bindchange="bindDateChange" start="{{oneWeekBefore}}" end="{{today}}" value="{{date}}">
+    <view class="label"><text class="iconfont icon-riqi"></text>日期：</view>
+    <view class='content'>
+      {{date}}
+    </view>
+    <view class='iconfont arrow icon-xiangyou'></view>
+  </picker>
+  </view>
+
+  <view class='section'>
+    <view class="label"><text class="iconfont icon-haoshi"></text>工时：</view>
+    <view class='content'>
+      <input class='form-control' type='digit' style='width:200rpx;float:left' placeholder='0' name='hours' value='{{consume}}'></input>
+      <view style='display:inline-block;float:left;height:60rpx;padding-left:20rpx'>h</view>
+    </view>
+  </view>
+   <view class='section'>
+    <view class="label"><text class="iconfont icon-content"></text>事由：</view>
+    <view class='content'>
+     <textarea  class='textarea' maxlength='-1' auto-height='true' placeholder='请输入加班事由' name='description' value='{{content}}'/>
+    </view>
+  </view>
+
+  <button form-type="submit" type="primary" class='primary-round' disabled='{{btnDisable}}' style='margin-top:60rpx'>提 交</button>
+  
+  </form>
+  </view>
+
+</view>

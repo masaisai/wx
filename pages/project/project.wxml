@@ -1,0 +1,111 @@
+<!--pages/project/project.wxml-->
+<view class='container'>
+<!--search start-->
+<view class='searchBar'>
+  <view class="search">
+      <view class="search-left">
+       <button class='searchBtn' plain="true"  bindtap='search'><text class="iconfont icon-search01" ></text></button>
+          <input placeholder="请输入项目名称" confirm-type='search' bindinput="bindKeyInput" bindconfirm="inputConfirm" placeholder-class="search-placeholder"/>
+      </view>
+     
+  </view>
+</view>
+<!--search end-->
+
+<!--project start-->
+<view class="scrollCon">
+  <view class='swiper-container'>
+    <swiper indicator-dots="{{indicatorDots}}" bindanimationfinish='swiperChange' current='{{currentIndex}}' style="height:{{cardHeight}}">
+      <swiper-item wx:for='{{projectData}}' wx:key="id" wx:for-item="item">
+       
+      
+        <view class='swiper-item'>
+          <view class='project'>
+          <!--project top start-->
+            <view class='top'>
+            <view class='top-content'>
+            <view class='procode'><text class="iconfont icon-shuqian"></text>{{item.procode}}</view>
+
+            <view class='protitle'>
+              <view class='proname'>{{item.proname}}</view>
+            </view>
+
+            <view class='labels'>
+              <view class='label'>{{item.protype}}</view>
+               <view class='label'>{{item.mileage}}</view>
+            </view>
+
+            <view class='description'>{{item.description}}</view>
+
+            <view class='raty' wx:if='{{item.endtime}}'>项目进度（<text>{{item.endtime}}截止</text>）</view>
+            <view class='raty' wx:else>项目进度</view>
+            <view class='ratyBar' wx:if='{{item.username==usercode}}'>
+               <slider step="1" min='0' max='100'  value='{{item.rate}}' show-value='true' block-size='20' activeColor='#3e8ef7' block-color='#3e8ef7' bindchange='setRate' data-id='{{item.id}}'/>
+            </view>
+           <!-- <canvas canvas-id="ringCanvas{{index}}" wx:else class="canvas"></canvas>-->
+            <view class='progress' wx:else>
+                <view class='progressBar'>
+                   <view class='progresCon' style='width:{{item.rate}}%'></view>
+                </view>
+                <view class='number'>{{item.rate}}%</view>
+            </view>
+            
+          <view class='member'>项目成员（{{item.memberNum}}）</view>
+          <view class='memberList clearfix'>
+           <view  class='member-item' wx:for='{{item.member}}' wx:key="id" wx:for-item="memberItem" wx:for-index="idx">
+           <block>
+                <image class='head' wx:if="{{item.username==memberItem.code}}"  src="../../images/crown2.png" background-size="cover"></image>
+            </block>
+             <block>
+                <image class='avatar'  src="{{memberItem.head}}" background-size="cover" data-index="{{index}}" data-idx="{{idx}}" binderror='memberImageLoadFail'></image>
+            </block>
+            </view>
+           
+          </view>
+          </view>
+          </view>
+        <!--project top end-->
+
+        <!--project bottom start-->
+          <view class='bottom clearfix'>
+            <view class='bottom-item'>
+              <view class='name'>任务</view>
+              <view class='num'>{{item['task-amount']}}</view>
+            </view>
+             <view class='bottom-item'>
+              <view class='name'>缺陷</view>
+              <view class='num'>{{item['bug-amount']}}</view>
+            </view>
+            <view class='bottom-item' data-id='{{item.id}}' bindtap='goDaily'>
+              <view class='name'>日报</view>
+              <view class='num'>{{item['daily-amount']}}</view>
+            </view>
+          </view>
+          <!--project bottom end-->
+
+          </view>
+        </view>
+      </swiper-item>
+     <swiper-item>
+        <view class='swiper-item loading-wrap'>
+          <view class='loading' wx:if='{{loading}}'>
+            <block>
+              <image  src='../../images/loading.gif'></image>
+            </block>
+          </view>
+          <view class='loading' wx:else>
+          <block>
+              <image  src='../../images/nodata.png'></image>
+            </block>
+           <view style="padding-top:20rpx">已经没有数据了!</view>
+          </view>
+        </view>
+        
+      </swiper-item>
+</swiper>
+<view class='pageNumber'>{{pageNumber}} / {{total}}</view>
+  </view>
+</view>
+<!--project end-->
+
+</view>

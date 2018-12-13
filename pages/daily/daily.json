@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "日报",
+  "navigationBarBackgroundColor": "#0062f6",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "onReachBottom": false
+}

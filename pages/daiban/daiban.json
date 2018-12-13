@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "待办",
+  "navigationBarBackgroundColor": "#0062f6",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "onReachBottom": false,
+  "disableScroll": true
+}

@@ -1,0 +1,18 @@
+/* pages/message/message.wxss */
+page{height:100%}
+.container{height:100%;padding-top:50rpx}
+.bg{width:640rpx;background:white;border-radius:10rpx;margin:0rpx auto 30rpx;overflow:auto;padding:0 10rpx}
+.message-item{padding:26rpx 0rpx;font-size:24rpx;border-bottom:1rpx solid #eee}
+.message-item:last-child{border-bottom:none}
+.message-left{width:100rpx;height:100rpx;float:left}
+.message-icon{width:80rpx;height:80rpx;margin:10rpx auto;position:relative}
+.message-icon .icon{width:80rpx;height:80rpx;background:#E1F1FF;overflow:hidden;border-radius:50%;line-height:80rpx;text-align:center}
+.message-icon .icon .iconfont{font-size:40rpx;color:#0062f6}
+.message-icon .num{overflow:hidden;position:absolute;right:-4rpx;top:-8rpx;height:30rpx;background:red;color:white;text-align:center;padding:0 6rpx;font-size:20rpx;display:inline-block;line-height:30rpx;border-radius:15rpx;min-width:30rpx;box-sizing:border-box}
+.message-right{width:490rpx;float:left;padding:6rpx 0 6rpx 20rpx;font-size:24rpx;text-align:left}
+.message-right .message-top{width:520rpx;line-height:44rpx}
+.message-right .message-top .message-title{width:400rpx;float:left}
+.message-right .message-top .message-date{width:90rpx;float:left;text-align:right;color:#bbb}
+.message-right .message-bottom{width:400rpx;line-height:44rpx;color:#999;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.noData{display:table}
+.noData image{display:table-cell}

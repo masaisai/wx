@@ -1,0 +1,79 @@
+/* pages/daily/daily.wxss */
+page{height:100%}
+.container{padding:0;font-size:26rpx;padding-top:100rpx;position:relative;}
+.searchBar{width:750rpx;height:100rpx;position:fixed;left:0;top:0;z-index:2;}
+.scrollCon{height:100%;}
+.container .search{width:660rpx;height: 80rpx;margin:20rpx auto 0;background:white;line-height:80rpx;border-radius:8rpx;overflow:hidden}
+.container input{display:block; height: 80rpx;font-size: 26rpx; width:540rpx;padding:0 20rpx;color:#333;float:left}
+.search-placeholder{ color: #333;line-height: 20rpx;z-index:0}
+.search-placeholder{ color: #333;line-height: 20rpx;z-index:0}
+button.searchBtn{border:0px solid transparent;font-size:32rpx!important;outline:none!important;color:#333;line-height:80rpx;border-radius:0;display:block;width:80rpx;float:left}
+
+.swiper-container{width:750rpx;padding-top:50rpx}
+.swiper-container swiper{width:750rpx;}
+.swiper-container swiper-item{width:750rpx;}
+.swiper-container .swiper-item{width:660rpx;height:100%;background:white;border-radius:10rpx;margin:0 auto;overflow:hidden}
+
+.daily{position:relative;height:100%}
+.daily .top{padding:30rpx;padding-bottom:120rpx;height:100%;box-sizing:border-box;}
+.daily .top .top-content{height:100%;overflow:auto}
+.daily.unread .top .topMes{margin-bottom:30rpx}
+.daily.unread .top .topMes .time{color:#999;text-align:left;line-height:40rpx;margin-bottom:10rpx;width:300rpx;float:left}
+.daily.unread .top .topMes .time .iconfont{margin-right:10rpx;font-size:28rpx}
+.daily.unread .top .topMes .status{width:200rpx;float:right;text-align:right;color:orangered}
+.daily.unread .top .userInfo{width:100%}
+.daily.unread .top .userInfo .avatar{width:80rpx;height:80rpx;border-radius:50%;overflow:hidden;margin:0 auto;display:block}
+.daily.unread .top .userInfo .username{text-align:center;line-height:60rpx;margin-bottom:30rpx}
+.daily.unread .top .labels{text-align:center;margin-bottom:40rpx}
+.daily.unread .top .labels .label{padding:2px 6px;display:inline-block;margin:0 10rpx;background:#D6EEF8;color:#57B7E1;font-size:26rpx;}
+.daily.unread .top .proname{padding:20rpx 0}
+.daily.unread .top .proname .title{color:#999}
+.daily.unread .top .content{line-height:40rpx;padding-bottom:30rpx;white-space:normal;word-break:break-all;word-wrap:break-word}
+.daily.unread .bottom{position:absolute;left:0;bottom:0;width:100%;border-top:1rpx solid #eee;background:white}
+.daily.unread .bottom .bottom-item{width:50%;float:left;text-align:center;padding:30rpx 0;position:relative}
+.daily.unread .bottom .bottom-item .line{width:1px;height:50rpx;background:#eee;position:absolute;right:0;top:35rpx}
+.daily.unread .bottom .bottom-item .btn{line-height:60rpx;font-size:28rpx}
+button.circle-btn{position:fixed;right:80rpx;bottom:150rpx;border-radius:50%;width:90rpx;height:90rpx;border:none;background:#3e8ef7;box-shadow:3px 3px 5px rgba(62,142,247,0.2); color:white;line-height:90rpx;padding-left:0!important;padding-right:0!important;z-index:99999;}
+button.circle-btn .iconfont{font-size:50rpx!important}
+
+
+.daily.read .top .topMes{margin-bottom:30rpx}
+.daily.read .top .userInfo{width:400rpx;float:left}
+.daily.read .top .userInfo .avatar{width:80rpx;height:80rpx;border-radius:50%;overflow:hidden;margin:0 auto;display:block;float:left}
+.daily.read .top .userInfo .userCon{width:300rpx;float:left;padding-left:20rpx}
+.daily.read .top .userInfo .userCon .username{line-height:40rpx}
+.daily.read .top .userInfo .userCon .time{line-height:40rpx;color:#999}
+.daily.read .top .status{width:200rpx;float:right;text-align:right;color:green}
+.daily.read .top .proname{padding:20rpx 0;color:#57B7E1}
+.daily.read .top .content{line-height:40rpx;padding-bottom:30rpx}
+.daily.read .top .protype{line-height:40rpx;padding:20rpx 0}
+.daily.read .top .protype .title{width:200rpx;display:inline-block;color:#999}
+.daily.read .top .protype .title .iconfont{font-size:28rpx!important;margin-right:20rpx}
+.daily.read .top .protype .con{width:400rpx;display:inline-block}
+.daily.read .top .consume{line-height:40rpx;padding:20rpx 0}
+.daily.read .top .consume .title{width:200rpx;display:inline-block;color:#999}
+.daily.read .top .consume .title .iconfont{font-size:28rpx!important;margin-right:20rpx}
+.daily.read .top .consume .con{width:400rpx;display:inline-block}
+.daily.read .top .parise{line-height:60rpx;padding:20rpx 0;border-top:1rpx solid #eee;border-bottom:1rpx solid #eee}
+.daily.read .top .parise .pariseBtn{width:120rpx;float:left;font-size:26rpx;color:#999;text-align:left}
+.daily.read .top .parise .pariseBtn button{text-align:left!important}
+.daily.read .top .parise .pariseBtn .iconfont{font-size:28rpx}
+.daily.read .top .parise .pariseBtn text{font-size:26rpx!important}
+.daily.read .top .parise .wrap-btn{font-size:28rpx;line-height:60rpx;}
+.daily.read .top .parise .parisePeople{width:110rpx;float:right;padding-left:20rpx;padding-top:5rpx}
+.daily.read .top .parise .parisePeople .pariseItem{width:50rpx;height:50rpx;float:right;margin-left:-20rpx;background:white;border-radius:50%;overflow:hidden;}
+.daily.read .top .parise .parisePeople .pariseItem image{width:50rpx;height:50rpx;border:1rpx solid white;border-radius:50%;overflow:hidden;box-sizing:border-box}
+.daily.read .top .comment{padding-top:30rpx;padding-bottom:30rpx}
+.daily.read .top .comment .comment-title{line-height:60rpx;color:#999}
+.daily.read .top .comment .comment-content{padding-top:10rpx}
+.daily.read .top .comment .comment-content .comment-item{padding:15rpx 0;}
+.daily.read .top .comment .comment-content .comment-item .avatar{width:70rpx;height:70rpx;border-radius:50%;overflow:hidden;margin:0 auto;display:block;float:left;margin-right:30rpx}
+.daily.read .top .comment .comment-content .comment-item .comment-main{width:490rpx;float:left}
+.daily.read .top .comment .comment-content .comment-item .comment-main .comment-name{line-height:40rpx}
+.daily.read .top .comment .comment-content .comment-item .comment-main .comment-message{line-height:40rpx}
+
+
+.release{display:block;box-sizing: border-box;position:absolute;left:30rpx;bottom: 0;width:600rpx;height:120rpx;padding:25rpx 0rpx;background-color:white;border-top:1rpx solid #eee}
+button.primary-round{width:400rpx;height:70rpx;border-radius:35rpx;text-align:center;line-height:70rpx;font-size:28rpx;background:#169BD5!important;padding:0;margin:0 auto;border:none}
+button.primary-round:active,button.primary-round:hover,button.primary-round:focus{background:#3e8ef7}
+.pageNumber{padding:0 70rpx;line-height:50rpx;color:white;text-align:right}

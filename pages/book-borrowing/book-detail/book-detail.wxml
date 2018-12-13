@@ -1,0 +1,29 @@
+<!--pages/book-borrowing/book-detail/book-detail.wxml-->
+<view class='container' wx:if='{{!noData}}'>
+  <view class='content-wrap'>
+    <view class='content'>
+      <block>
+          <image  class='book-image'  src="{{bookData.path}}" widthFix='center'></image>
+      </block>
+      <view class='book-name'>《{{bookData.name}}》</view>
+      <view class='book-author'>{{bookData.press}}</view>
+    
+       <view class='book-user clearfix'>
+        <view class='book-user-title'>历史借阅记录（{{bookData.borrowers.length}}）</view>
+        <view class='book-user-con'>
+          <view class='book-user-item' wx:for='{{bookData.borrowers}}'>
+            <block>
+              <image  src="{{item}}" background-size="cover"></image>
+            </block>
+          </view>
+           
+
+        </view>
+      </view>
+
+      <button form-type="submit" disabled='{{disabled}}' type="primary" class='primary-round' style='margin-top:60rpx' bindtap='borrowing'>我要借阅</button>
+    </view>
+  </view>
+ 
+</view>
+ <view wx:else style='text-align:center;font-size:30rpx;line-height:60rpx'>没有数据</view>

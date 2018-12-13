@@ -1,0 +1,11 @@
+/* pages/select/people-select/people-select.wxss */
+page{background:white}
+.wrap{padding:30rpx 25rpx 60rpx}
+radio-group,checkbox-group{width:100%;margin-bottom:40rpx}
+.people{width:140rpx;display:inline-block;text-align:center;position:relative}
+radio-group .label,checkbox-group .label{width:90rpx;margin:0 auto 40rpx;position: relative;display:block}
+.people checkbox{position:absolute;top:-14rpx;right:-18rpx;z-index:11;transform:scale(0.6);display:block}
+.people image{width:90rpx;height:90rpx;margin:0 auto;display:block}
+.avatarName{width:90rpx;height:90rpx;margin:0 auto;display:block;background:#0bb2d4;font-size:26rpx;line-height:90rpx;text-align:center;color:white}
+.people .username{line-height:40rpx;font-size:26rpx} 
+button.primary-round{width:500rpx;height:80rpx;border-radius:40rpx;text-align:center;line-height:80rpx;font-size:28rpx;background:#169BD5!important;padding:0;margin:0rpx auto;border:none}

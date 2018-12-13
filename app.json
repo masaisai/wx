@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/auth/auth",
+    "pages/logs/logs",
+    "pages/project/project",
+    "pages/daily/daily",
+    "pages/daily/daily-comment/daily-comment",
+    "pages/daiban/daiban",
+    "pages/search/project-search/project-search",
+    "pages/daily/add-daily/add-daily",
+    "pages/select/project-select/project-select",
+    "pages/license/license",
+    "pages/daily/all-daily/all-daily",
+    "pages/search/daily-search/daily-search",
+    "pages/select/people-select/people-select",
+    "pages/daiban/all-daiban/all-daiban",
+    "pages/book-borrowing/book-borrowing",
+    "pages/book-borrowing/book-detail/book-detail",
+    "pages/overtime/overtime",
+    "pages/score/score",
+    "pages/daily/project-daily/project-daily",
+    "pages/search/project-daily-search/project-daily-search",
+    "pages/message/message",
+    "pages/message/message-list/message-list",
+    "pages/message/message-img-list/message-img-list",
+    "pages/message/message-detail/message-detail",
+    "pages/message/system-list/system-list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0062f6",
+    "navigationBarTitleText": "睿希科技",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#0062f6",
+    "onReachBottom": false,
+    "disableScroll": true
+  }
+}

@@ -1,0 +1,60 @@
+<!--pages/daily/daily-comment/daily-comment.wxml-->
+<view class='container'>
+  <view class='swiper-item'>
+   <view class='comment'>
+      <view class='comment-title'>评论（{{replyLen}}）</view>
+
+    <view class='comment-item clearfix' wx:for='{{replyData}}'>
+
+      <view class='left'>
+        <block><image  src="{{item.head}}" class="avatar" background-size="cover"></image></block>
+        <view class='username'>{{item.name}}</view>
+      </view>
+
+      <view class='right'>
+            <view class='middle'>
+              <view class='content'>{{item.content}}</view>
+            </view>
+             <view class='bottom clearfix'>
+              <view class='time'><text class='iconfont icon-riqi'></text>{{item.createtime}}</view>
+              <view class='remove' wx:if='{{item.fromuser==usercode}}' bindtap="removeReply" data-id='{{item.id}}'><text class='iconfont icon-shanchu1'></text>删除</view>
+               <view class='remove' wx:else> </view>
+              <view class='reply'  bindtap="bindReply" data-id='{{item.id}}' data-replyto='{{item.name}}'><text class='iconfont icon-xiaoxi1' style="font-size:32rpx"></text>回复</view>
+            </view>
+      </view>
+
+      <view class='replyCon'>
+         <view class='reply-item clearfix'  wx:for='{{item.children}}' wx:for-item='replyItem'>
+            <view class='top'>
+              <view class='content'><text class='username'>{{replyItem.name}}: </text>{{replyItem.content}}</view>
+            </view>
+             <view class='bottom'>
+                <view class='time'><text class='iconfont icon-riqi'></text>{{replyItem.createtime}}</view>
+                <view class='remove' wx:if='{{replyItem.fromuser==usercode}}' bindtap="removeReply" data-id='{{replyItem.id}}'><text class='iconfont icon-shanchu1'></text>删除</view>
+              </view>
+            </view>
+         </view>
+
+         
+
+    </view>
+
+
+
+ 
+  
+
+  
+ 
+
+   </view>
+
+<view class="release">
+<textarea class="text" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="true" cursor-spacing="15" auto-height="true" focus="{{releaseFocus}}" placeholder="发表评论" value='{{commentValue}}'  cursor='{{cursor}}'  bindinput='commentInput'></textarea>
+<view class="submit" bindtap='comment'>发送</view>
+
+</view>
+
+  </view>
+</view>
+

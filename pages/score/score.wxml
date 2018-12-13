@@ -1,0 +1,9 @@
+<!--pages/score/score.wxml-->
+<view class='container'>
+<view class='score'>
+  <view class='number'>{{score}}</view>
+  <view class='title'>个人评分</view>
+</view>
+<view class='tip'wx:if="{{raise}}">比上月增加了{{difference}}%，再接再厉</view>
+<view class='tip'wx:else>比上月减少了{{difference}}%，加油</view>
+</view>

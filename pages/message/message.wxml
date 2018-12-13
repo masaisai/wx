@@ -1,0 +1,43 @@
+<!--pages/message/message.wxml-->
+<view class='container'>
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class='bg'>
+
+    <view class='message-item clearfix' wx:for='{{messageData}}' wx:key='msgtype' hover-class="navigator-active" bindtap='openPage' data-url='{{item.url}}'>
+     <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+      <view class='message-left'>
+        <view class='message-icon'>
+          <view class='icon'>
+          <text wx:if='{{item.msgtype=="task"}}' class='iconfont icon-renwu1'></text>
+          <text wx:elif='{{item.msgtype=="flow"}}' class='iconfont icon-liucheng'></text>
+          <text wx:elif='{{item.msgtype=="fault"}}' class='iconfont icon-guzhang'></text>
+          <text wx:elif='{{item.msgtype=="system"}}' class='iconfont icon-xitongxiaoxi'></text>
+          <text wx:elif='{{item.msgtype=="notice"}}' class='iconfont icon-gonggao'></text>
+          </view>
+          <view class='num' wx:if='{{item.number>0}}'>{{item.number}}</view>
+        </view>
+      </view>
+      <view class='message-right'>
+      <view class='message-top'>
+        <view class='message-title'>{{item.msgvalue}}</view>
+        <view class='message-date'>{{item.day}}</view>
+      </view>
+      <view class='message-bottom' wx:if='{{item.title.length>0}}'>{{item.title}}</view>
+      <view class='message-bottom' wx:else>{{item.content}}</view>
+      </view>
+       </button>
+    </view>
+
+  </view>
+
+  <view wx:if='{{noData}}' class='bg loading-wrap' style="height:{{cardHeight}}">
+  <view class='loading'>
+    <block>
+            <image  src='../../images/nodata.png'></image>
+       </block>
+        <view style="padding-top:20rpx;font-size:26rpx">已经没有数据了!</view>
+  </view>
+     
+  </view>
+  </form>
+</view>

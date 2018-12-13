@@ -1,0 +1,18 @@
+/* pages/message/message-img-list/message-img-list.wxss */
+page{height:100%}
+.container{height:100%;}
+scroll-view{height:100%}
+.message-list{font-size:24rpx;padding-top:50rpx;padding-bottom:0rpx}
+.message-img-list-item{width:600rpx;margin:0 auto 30rpx;padding:26rpx 30rpx;background:white;border-radius:10rpx;overflow:hidden}
+.message-img-list-item .top{line-height:50rpx;margin-bottom:20rpx;height:50rpx}
+.message-img-list-item .top .title{width:500rpx;float:left;font-size:26rpx;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.message-img-list-item .top .title .point{width:8rpx;height:8rpx;border-radius:50%;background: red;display:inline-block;margin:0rpx 10rpx;vertical-align:middle;position:relative;top:-2rpx}
+.message-img-list-item .top .title .tip{}
+.message-img-list-item .top .date{width:100rpx;float:right;text-align:right;color:#bbb;}
+.message-img-list-item .middle{line-height:40rpx;font-size:24rpx;color:#999;padding-bottom:20rpx}
+.message-img-list-item .middle image{margin-bottom:20rpx}
+.message-img-list-item.read{color:#999}
+.message-img-list-item.read .top .title .point{background:#999}
+.message-img-list-item .bottom{line-height:50rpx;height:50rpx;padding-top:20rpx;border-top:1rpx solid #eee}
+.message-img-list-item .bottom .more{width:400rpx;float:left;color:#0062f6;font-size:24rpx;text-align:left}
+.message-img-list-item .bottom .arrow{width:50rpx;height:50rpx;line-height:50rpx;text-align:center;float:right;color:#999;font-size:24rpx}

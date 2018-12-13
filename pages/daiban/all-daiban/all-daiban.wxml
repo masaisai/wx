@@ -1,0 +1,287 @@
+<!--pages/daiban/all-daiban/all-daiban.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<form bindsubmit="formSubmit" report-submit='true'>
+<view class='container'>
+
+
+<!--project start-->
+
+  <view class='swiper-container'>
+    <swiper indicator-dots="{{indicatorDots}}" current='{{currentIndex}}' bindanimationfinish='swiperChange' style="height:{{cardHeight}}">
+      <swiper-item wx:for='{{daibanData}}'  wx:for-item="item">
+      <!--bug confirm start-->
+        <view class='swiper-item' wx:if="{{item.tag=='1'}}">
+          <view class='daiban'>
+          <!--project top start-->
+            <view class='top'>
+            <view class='top-content'>
+            <view class='top-note clearfix'>
+                <view class='top-note-left'><text class="iconfont icon-bug"></text>缺陷<text class='endtime'></text></view>
+                 <view class='top-note-right'>未确认</view>
+            </view>
+            <view class='userInfo clearfix'>
+                <block>
+                <image class='avatar'  src="{{item.head}}" background-size="cover"></image>
+                 </block>
+              
+              <view class='userCon'>
+                <view class='username'>{{item.name}}</view>
+                <view class='time'>{{item.data.createtime}}</view>
+              </view>
+            </view>
+              <view class='proname'>{{item.data.title}}</view>
+
+            <view class='description'><template is="wxParse" data="{{wxParseData:item.wxparse.nodes}}"/></view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-mokuai'></text>模块：</view>
+              <view class='common-content'>{{item.data.modular}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-gongchengxiangmu'></text>所属项目：</view>
+              <view class='common-content'>{{item.data.proname}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jieduan'></text>类型：</view>
+              <view class='common-content'>{{item.data.bugtype}}</view>
+            </view>
+          <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jinjichengdu'></text>严重程度：</view>
+              <view class='common-content'>{{item.data.severity}}</view>
+            </view>
+           
+          </view>
+           </view>
+        <!--project top end-->
+
+       
+
+          </view>
+        </view>
+<!--bug confirm end-->
+
+<!--bug solution start-->
+        <view class='swiper-item' wx:if="{{item.tag=='2'}}">
+          <view class='daiban'>
+          <!--project top start-->
+            <view class='top'>
+            <view class='top-content'>
+            <view class='top-note clearfix'>
+                <view class='top-note-left'><text class="iconfont icon-bug"></text>缺陷<text class='endtime'></text></view>
+                 <view class='top-note-right'>待处理</view>
+            </view>
+            <view class='userInfo clearfix'>
+                <block>
+                <image class='avatar'  src="{{item.head}}" background-size="cover"></image>
+                 </block>
+              
+              <view class='userCon'>
+                <view class='username'>{{item.name}}</view>
+                <view class='time'>{{item.data.createtime}}</view>
+              </view>
+            </view>
+              <view class='proname'>{{item.data.title}}</view>
+
+            <view class='description'><template is="wxParse" data="{{wxParseData:item.wxparse.nodes}}"/></view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-mokuai'></text>模块：</view>
+              <view class='common-content'>{{item.data.modular}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-gongchengxiangmu'></text>所属项目：</view>
+              <view class='common-content'>{{item.data.proname}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jieduan'></text>类型：</view>
+              <view class='common-content'>{{item.data.bugtype}}</view>
+            </view>
+          <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jinjichengdu'></text>严重程度：</view>
+              <view class='common-content'>{{item.data.severity}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-fuzeren'></text>责任人：</view>
+              <view class='common-content'>
+                <view class='content'>
+                   {{item.personliable}}
+                   
+                </view>
+              
+              
+              </view>
+            </view>
+          </view>
+           </view>
+        <!--project top end-->
+
+       
+
+          </view>
+        </view>
+<!--bug solution end-->
+
+       <!--任务 start-->
+        <view class='swiper-item' wx:if="{{item.tag=='4'}}">
+          <view class='daiban'>
+          <!--project top start-->
+            <view class='top'>
+            <view class='top-content'>
+            <view class='top-note clearfix'>
+                <view class='top-note-left'><text class="iconfont icon-renwu"></text>任务<text class='endtime' wx:if='{{item.data.isdelay=="0"}}'>{{item.data.enddate}}截止</text><text class='endtime' wx:else style='color:#999'>{{item.data.enddate}}</text></view>
+                 <view class='top-note-right'>待完成</view>
+            </view>
+            <view class='userInfo clearfix'>
+                <block>
+                <image class='avatar'  src="{{item.head}}" background-size="cover"></image>
+                 </block>
+              
+              <view class='userCon'>
+                <view class='username'>{{item.name}}</view>
+                <view class='time'>{{item.data.createtime}}</view>
+              </view>
+            </view>
+              <view class='proname'>{{item.data.name}}</view>
+
+            <view class='description'>{{item.data.description}}</view>
+
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-gongchengxiangmu'></text>所属项目：</view>
+              <view class='common-content'>{{item.data.proname}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jieduan'></text>任务类型：</view>
+              <view class='common-content'>{{item.data.tasktype}}</view>
+            </view>
+          <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jinjichengdu'></text>紧急程度：</view>
+              <view class='common-content'>{{item.data.level}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-fenshu'></text>分数：</view>
+              <view class='common-content'>{{item.data.estimate}}</view>
+            </view>
+          </view>
+           </view>
+        <!--project top end-->
+
+        
+
+          </view>
+        </view>
+<!--任务 end-->
+
+<!--需求 start-->
+        <view class='swiper-item' wx:if="{{item.tag=='5'}}">
+          <view class='daiban'>
+          <!--project top start-->
+            <view class='top'>
+            <view class='top-content'>
+            <view class='top-note clearfix'>
+                <view class='top-note-left'><text class="iconfont icon-xuqiu"></text>需求</view>
+                 <view class='top-note-right'>待审批</view>
+            </view>
+            <view class='userInfo clearfix'>
+                <block>
+                <image class='avatar'  src="{{item.head}}" background-size="cover"></image>
+                 </block>
+              
+              <view class='userCon'>
+                <view class='username'>{{item.name}}</view>
+                <view class='time'>{{item.data.createtime}}</view>
+              </view>
+            </view>
+              <view class='proname'>{{item.data.name}}</view>
+
+            <view class='description'>{{item.data.description}}</view>
+
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-gongchengxiangmu'></text>所属项目：</view>
+              <view class='common-content'>{{item.data.proname}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-laiyuan'></text>需求来源：</view>
+              <view class='common-content'>{{item.data.source}}</view>
+            </view>
+          <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-haoshi'></text>预计工时：</view>
+              <view class='common-content'>{{item.data.estimate}} h</view>
+            </view>
+          </view>
+           </view>
+        <!--project top end-->
+
+       
+
+          </view>
+        </view>
+<!--需求 end-->
+
+<!--日报 start-->
+         <view class='swiper-item' wx:if="{{item.tag=='6'}}">
+          <view class='daiban'>
+          <!--project top start-->
+            <view class='top'>
+            <view class='top-content'>
+            <view class='top-note clearfix'>
+                <view class='top-note-left'><text class="iconfont icon-ribao"></text>日报<text class='dailytime'>{{item.data.workday}}</text></view>
+                 <view class='top-note-right'>待审批</view>
+            </view>
+            <view class='userInfo clearfix'>
+                <block>
+                <image class='avatar'  src="{{item.head}}" background-size="cover"></image>
+                 </block>
+              
+              <view class='userCon'>
+                <view class='username'>{{item.name}}</view>
+                <view class='time'>{{item.data.createtime}}</view>
+              </view>
+            </view>
+              <view class='proname'>{{item.data.proname}}</view>
+
+            <view class='description'>{{item.data.content}}</view>
+
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-jieduan'></text>任务类型：</view>
+              <view class='common-content'>{{item.data.tasktype}}</view>
+            </view>
+            <view class='common-list clearfix'>
+              <view class='common-title'><text class='iconfont icon-haoshi'></text>耗时：</view>
+              <view class='common-content'>{{item.data.consume}} h</view>
+            </view>
+          
+          </view>
+           </view>
+        <!--project top end-->
+
+        
+
+          </view>
+        </view>
+        <!--日报 end-->
+      </swiper-item>
+      
+     
+      <swiper-item>
+        <view class='swiper-item loading-wrap'>
+          <view class='loading' wx:if='{{loading}}'>
+            <block>
+              <image  src='../../../images/loading.gif'></image>
+            </block>
+          </view>
+          <view class='loading' wx:else>
+          <block>
+              <image  src='../../../images/nodata.png'></image>
+            </block>
+           <view style="padding-top:20rpx">已经没有数据了!</view>
+          </view>
+        </view>
+        
+      </swiper-item>
+</swiper>
+<view class='pageNumber'>{{pageNumber}} / {{total}}</view>
+  </view>
+
+<!--project end-->
+
+</view>
+</form>
+

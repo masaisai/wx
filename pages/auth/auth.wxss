@@ -1,0 +1,16 @@
+/* pages/auth/auth.wxss */
+page{height:100%}
+.login-logo{width:186rpx;height:86rpx;margin:0 auto 40rpx;padding-top:180rpx}
+.login-logo image{width:186rpx;height:86rpx}
+.form-group{padding:0rpx 40rpx;position:relative}
+.form-group .label{position:absolute;left:40rpx;top:0;line-height:100rpx;display:inline-block;width:120rpx;text-align:center}
+.form-group .label image{width:40rpx;height:40rpx;margin:30rpx auto}
+.form-group .label .iconfont{font-size:32rpx;line-height:100rpx;color:white}
+.form-control{border-bottom:1px solid rgba(255, 255,255,0.5);height:98rpx;width:530rpx;padding:0 20rpx 0 120rpx;font-size:30rpx;color:white}
+.form-control-placeholder{color:rgba(255, 255,255,0.5)}
+.form-control.focus{border-bottom:1px solid white;}
+.form-control-placeholder.focus{color:rgba(255, 255,255,0.5)}
+button.default{background:#FF6C6C;color:white;font-size:30rpx;border-radius:40rpx;padding:0rpx;border:none;width:680rpx;height:80rpx;line-height:80rpx;margin:100rpx auto 0;display:block}
+button.default:active{background:#FF6C6C;}
+button.default[disabled]{background:#FF6C6C;color:white;font-size:30rpx;border-radius:40rpx;padding:0rpx;border:none;width:680rpx;height:80rpx;line-height:80rpx;margin:100rpx auto 0;display:block;opacity:0.4;cursor:not-allowed}
+.errorMes{padding-left:30rpx;font-size:24rpx;color:red;height:40rpx;line-height:40rpx}

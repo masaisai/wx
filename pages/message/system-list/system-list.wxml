@@ -1,0 +1,46 @@
+<!--pages/message/message-list/message-img-list.wxml-->
+<view class='container'>
+<scroll-view bindscrolltolower='onReachBottom' scroll-y>
+<view class='message-list {{editMode?"edit-mode":""}}'>
+<checkbox-group bindchange="checkboxChange">
+<form bindsubmit="formSubmit" report-submit='true'>
+  <view class='message-list-item {{item.state!="0"?"read":""}}' bindlongtap='longTap' data-mid='{{item.mid}}' wx:for='{{systemData}}'>
+  
+  <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+  <label>
+    <view class='top'>
+      <view class='title'>
+        <text class='point'></text>
+        <text class='tip'>系统消息</text>
+      </view>
+      <view class='date'>{{item.sendtime}}</view>
+    </view>
+    <view class='bottom'>{{item.content}}</view>
+    <checkbox value="{{item.mid}}" checked='{{item.checked}}' color='#0062f6'></checkbox>
+     </label>
+    </button>
+   
+  </view>
+
+  </form>
+  </checkbox-group>
+</view>
+<view class='loadData' wx:if='{{loadData}}'>上拉加载</view>
+
+  <view wx:if='{{noData}}' class='bg loading-wrap' style="height:{{cardHeight}}">
+  <view class='loading'>
+    <block>
+            <image  src='../../../images/nodata.png'></image>
+       </block>
+        <view style="padding-top:20rpx;font-size:26rpx">已经没有数据了!</view>
+  </view> 
+  
+  </view>
+
+</scroll-view>
+
+<view wx:if="{{editMode}}" class='edit-tools'>
+  <view class='tool remove' bindtap='removeItem'><text class='iconfont icon-shanchu1'></text>删除</view>
+  <view class='tool cancel' bindtap='cancelEdit'><text class='iconfont icon-quxiao'></text>取消</view>
+</view>
+</view>

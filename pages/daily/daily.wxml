@@ -1,0 +1,96 @@
+<!--pages/daily/daily.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'>
+<view class='container'style="padding-top:0rpx!important">
+<!--topBar start-->
+<!--topBar end-->
+<!--search start-->
+<!--<view class='searchBar'>
+  <view class="search">
+       <button class='searchBtn' plain="true"  bindtap='search'><text class="iconfont icon-search01" ></text></button>
+          <input placeholder="请输入姓名" confirm-type='search' bindinput="bindKeyInput" bindconfirm="inputConfirm" placeholder-class="search-placeholder"/>
+  </view>
+</view>-->
+<!--search end-->
+
+<!--daily start-->
+<view class="scrollCon">
+  <view class='swiper-container'>
+    <swiper indicator-dots="{{indicatorDots}}" circular='{{circular}}' current='{{currentIndex}}'  bindanimationfinish='swiperChange'   style="height:{{cardHeight}}">
+      <swiper-item wx:for='{{dailyData}}'  wx:for-item="item">
+        <view class='swiper-item'>
+          <!--daily unread start-->
+          <view class='daily unread'>
+
+           <!--daily top start-->
+            <view class='top'>
+            <view class='top-content'>
+              <view class='topMes clearfix'>
+              <view class='time'>
+                <text class="iconfont icon-riqi"></text>{{item.workday}}
+              </view>
+              <view class='status'>未审批</view>
+            </view>
+
+            <view class='userInfo'>
+              <block><image  src="{{item.head}}" class="avatar" background-size="cover"></image></block>
+              <view class='username'>{{item.name}}</view>
+            </view>
+
+            <view class='labels'>
+              <view class='label'>{{item.tasktype}}</view>
+               <view class='label'>{{item.consume}} h</view>
+            </view>
+
+            <view class='proname'><text class='title'>所属项目：</text>{{item.proname}}</view>
+            <view class='content'>{{item.content}}</view>
+            </view>
+          </view>
+           <!--daily top end-->
+
+
+            <!--daily bottom start-->
+          <view class='bottom clearfix'>
+            <view class='bottom-item'>
+            <button form-type="submit" class='wrap-btn' plain="true"  hover-class="none">
+              <view class='btn edit' bindtap='edit' data-id='{{item.id}}' data-proid='{{item.proid}}' data-proname='{{item.proname}}' data-content='{{item.content}}' data-workday='{{item.workday}}' data-consume='{{item.consume}}'  data-tasktype='{{item.tasktype}}'><text class='iconfont icon-bianji'></text></view>
+              </button>
+              <view class='line'></view>
+            </view>
+             <view class='bottom-item'>
+              <button form-type="submit" class='wrap-btn' plain="true"  hover-class="none">
+              <view class='btn remove' bindtap='remove' data-id='{{item.id}}' data-state='{{item.state}}'><text class='iconfont icon-shanchu1'></text></view>
+              </button>
+            </view>
+          </view>
+          <!--daily bottom end-->
+          
+          </view>
+          <!--daily unread end-->
+        </view>
+      </swiper-item>
+      
+      
+      <swiper-item>
+        <view class='swiper-item loading-wrap'>
+          <view class='loading' wx:if='{{loading}}'>
+            <block>
+              <image  src='../../images/loading.gif'></image>
+            </block>
+          </view>
+          <view class='loading' wx:else>
+          <block>
+              <image  src='../../images/nodata.png'></image>
+            </block>
+           <view style="padding-top:20rpx">已经没有数据了!</view>
+          </view>
+        </view>
+        
+      </swiper-item>
+</swiper>
+<view class='pageNumber'>{{pageNumber}} / {{total}}</view>
+  </view>
+</view>
+<!--daily end-->
+<button form-type="submit"  class='circle-btn' plain="true" hover-class="none" bindtap='addDaily'><i class="iconfont icon-add2"></i></button>
+</view>
+</form>

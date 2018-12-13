@@ -1,0 +1,19 @@
+<!--pages/select/project-select/project-select.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'>
+<view class='container'>
+ <view class='searchBar'>
+  <view class="search flex-wrp">
+      <view class="search-left flex-item">
+          <input placeholder="请输入搜索关键字" confirm-type='search' bindinput="bindKeyInput" bindconfirm="inputConfirm" placeholder-class="search-placeholder"/>
+          <button class='searchBtn' plain="true"  bindtap='search'><text class="iconfont icon-search01" ></text></button>
+      </view>
+    
+  </view>
+</view>
+<view class='projectWrap'>
+  <view class='item {{currentIndex==index?"active":""}}' wx:for="{{projectData}}"  bindtap='confirmSelect' data-index="{{index}}" data-proid="{{item.id}}" data-proname="{{item.proname}}"><button form-type="submit" class='wrap-btn' plain="true"  hover-class="none"><view class='con'>{{item.proname}}<view class='iconfont check icon-check'></view></view></button></view>
+   <view class='loadData' wx:if="{{showBottom}}">上拉加载</view>
+      <view class='noData' wx:if="{{showNoData}}">没有数据</view>
+</view>
+</view>
+</form>

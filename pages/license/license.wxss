@@ -1,0 +1,25 @@
+/* pages/license/license.wxss */
+page{height:100%;margin:0;padding:0}
+.container{padding:0;font-size:26rpx;position:relative;height:100%;overflow:auto;padding-top:50rpx}
+.swiper-item{width:640rpx;background:white;border-radius:10rpx;margin:0rpx auto;overflow:hidden;position:relative;height:100%}
+.license{height:100%;overflow:auto}
+.license .top{padding:40rpx 30rpx 60rpx;}
+.license .top .userInfo{width:100%}
+.license .top .userInfo .avatar{width:80rpx;height:80rpx;border-radius:50%;overflow:hidden;margin:0 auto;display:block;float:left;margin-right:20rpx;margin-top:20rpx}
+.license .top .userInfo .usercon{width:480rpx;float:left}
+.license .top .userInfo .username{text-align:left;line-height:60rpx;margin-bottom:4rpx}
+.license .top .labels{text-align:left;margin-bottom:40rpx}
+.license .top .labels .label{padding:2px 6px;display:inline-block;margin:0 10rpx;background:#D6EEF8;color:#57B7E1;font-size:26rpx;}
+.license .top .content{line-height:40rpx;padding-bottom:30rpx;white-space:normal;word-break:break-all;word-wrap:break-word;padding-left:10rpx}
+.license .bottom{padding:0 20rpx 40rpx;border-top:1rpx solid #eee}
+
+.section{padding:30rpx 0rpx;background: white;border-bottom:1rpx solid #eee;font-size:26rpx;color:#333;position:relative}
+.section::after{content:'';display:block;clear:both}
+.section .label{width:190rpx;display:inline-block;line-height:60rpx;padding-left:10rpx;float:left;color:#999999}
+.section .label .iconfont{margin-right:10rpx;font-size:28rpx}
+.section .content{width:400rpx;display:inline-block;line-height:60rpx;float:left;}
+.section .proname{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.section .arrow{position:absolute;right:20rpx;top:45rpx;font-size:30rpx;color:#999999}
+
+button.primary-round{width:400rpx;height:70rpx;border-radius:35rpx;text-align:center;line-height:70rpx;font-size:28rpx;background:#169BD5!important;padding:0;margin:0rpx auto;border:none}
+button.default-round{width:400rpx;height:70rpx;border-radius:35rpx;text-align:center;line-height:70rpx;font-size:28rpx;padding:0;margin:0rpx auto;border:1px solid #ddd!important}

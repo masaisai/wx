@@ -1,0 +1,3 @@
+/* pages/daiban/all-daiban/all-daiban.wxss */
+@import '../daiban.wxss';
+.daiban .top{padding-bottom:20rpx}

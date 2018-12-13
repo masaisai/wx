@@ -1,0 +1,17 @@
+<!--pages/select/people-select/people-select.wxml-->
+<view class="wrap">
+  <radio-group class="radio-group" bindchange="radioChange">
+   <label wx:for="{{peopleData}}" class='people'>
+    <view class='label'>
+  <checkbox value="{{item.code}}" checked="{{item.checked}}" color='#3e8ef7'/>
+  <view class='checkbox'><text class='iconfont'></text></view>
+    <block>
+      <image src='{{item.head}}' binderror='imgError' data-index='{{index}}'  background-size="cover"></image>
+    </block>
+    <text class='username'>{{item.name}}</text>
+     </view>
+  </label>
+</radio-group>
+ <button class='primary-round' type="primary" bindtap='confirmSelect'>确认选择</button>
+</view>
+

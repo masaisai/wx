@@ -1,0 +1,12 @@
+/* pages/message/message-detail/message-detail.wxss */
+page{height:100%}
+.container{height:100%;}
+scroll-view{height:100%;padding-top:50rpx;box-sizing:border-box}
+.bg{width:600rpx;background:white;border-radius:10rpx;margin:0rpx auto 30rpx;overflow:auto;padding:20rpx 30rpx;font-size:24rpx;box-sizing:content-box}
+.title{font-size:26rpx;margin-bottom:20rpx;line-height:40rpx;padding-top:30rpx}
+.sub{color:#999;font-size:24rpx;margin-bottom:30rpx}
+.core{min-height:700rpx}
+.image{width:600rpx;margin-bottom:20rpx}
+.image image{width:600rpx;}
+.content{line-height:40rpx;color:#999;margin-bottom:20rpx;}
+button.primary{width:300rpx;height:70rpx;border-radius:5rpx;text-align:center;line-height:70rpx;font-size:28rpx;background:#169BD5!important;padding:0;margin:0rpx auto;border:none}

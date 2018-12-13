@@ -1,0 +1,68 @@
+pages
+---auth
+   [登录验证功能页]
+---book-borrowing
+    [图书借阅页]
+    ---book-detail
+       [图书借阅详情页]
+---daiban
+    [我的待办]
+    ---all-daiban
+       [所有待办]
+---daily
+   [我的日报]
+   ---add-daily
+      [添加日报和修改日报]
+   ---daily-comment
+      [日报评论]
+    ---project-select
+       [项目列表下进入的日报页]
+---index
+   [首页]
+---license
+   [license审核页]
+---logs
+   [日志页（项目中无用）]
+---message
+   [消息列表页]
+   ---message-detail
+      [消息详情]
+   ---message-img-list
+      [带图片消息列表详情页]
+   ---message-list
+      [消息列表]
+   ---system-list
+      [系统通知]
+---overtime
+   [加班]
+---project
+   [项目列表]
+---score
+   [评分]
+---search
+   ---daily-search
+      [日报查询结果页（所有日报里查询结果）]
+   ---project-daily-search
+      [项目列表中进入的项目下日报列表页查询结果页]
+   ---project-search
+      [项目查询结果页]
+---select
+   ---people-select
+      [人员选择]
+   ---project-select
+      [项目选择页]
+---wxParse
+   [html标签解析插件（插件文件里有github和相关社区地址）]
+utils
+   [日期方法封装]
+app
+，
+   ---project-select
+      [项目选择页]
+---wxParse
+   [html标签解析插件（插件文件里有github和相关社区地址）]
+utils
+   [日期方法封装]
+app
+   [入口文件，判断是否登录，向后台获取首页展示信息，所有员工信息，定义全局参数]
+

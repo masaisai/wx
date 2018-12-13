@@ -1,0 +1,151 @@
+<!--index.wxml-->
+<form bindsubmit="formSubmit" report-submit='true'>
+<view class="container">
+ <!--<text class='logout' bindtap='loginOut'><text class='iconfont icon-tuichu'></text></text>-->
+ <text class='logout' bindtap='loginOut'>退出</text>
+<!--userinfo start-->
+  <view class="userinfo">
+    <block>
+      <image class="userinfo-avatar" src="{{accountInfo.head||'../../images/touxiang.png'}}" background-size="cover"  bindtap='reloadImg'></image>
+    </block>
+     <text class="userinfo-nickname">{{accountInfo.name}}</text>
+     <!--<text class='logout' bindtap='loginOut'>退出登录</text>-->
+  </view>
+  <!--userinfo end-->
+
+  <!--nav start-->
+  <view class='nav clearfix'>
+  <view class='navItem'>
+    <view class='itemCon' hover-class="navigator-active" bindtap='openPage' data-url='../daiban/daiban'>
+  <button form-type="submit" class='wrap-btn' plain="true"  hover-class="none">
+    <view class='num'>{{userAppData['trate-m']}}</view>
+    <view class='name'>待办</view>
+    </button>
+    </view>
+    <view class='line'></view>
+  </view>
+  <view class='navItem'>
+    <view class='itemCon' hover-class="navigator-active" bindtap='openPage' data-url='../project/project'>
+   <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='num'>{{userAppData['projects']}}</view>
+    <view class='name'>项目</view>
+    </button>
+    </view>
+    <view class='line'></view>
+  </view>
+  <view class='navItem'>
+   <view class='itemCon' hover-class="navigator-active" bindtap='openPage' data-url='../daily/daily'>
+  <button form-type="submit" class='wrap-btn' plain="true"  hover-class="none">
+    <view class='num'>{{userAppData['dailys-m']}}</view>
+    <view class='name'>日报</view>
+     </button>
+     </view>
+  </view>
+  </view>
+ <!--nav end-->
+
+  <!--appList start-->
+  <view class='appList clearfix'>
+    <view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../daily/all-daily/all-daily'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b2.png" background-size="cover"></image>
+        </block>
+        <view class='num' wx:if='{{userAppData["dailys-beforday"]>0}}'>{{userAppData['dailys-beforday']}}</view>
+    </view>
+    <text class='title'>日报</text>
+    </button>
+    </view>
+
+
+     <view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../daiban/all-daiban/all-daiban'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b4.png" background-size="cover"></image>
+        </block>
+       <!-- <view class='num' wx:if='{{userAppData["trate"]>0}}'>{{userAppData['trate']}}</view>-->
+    </view>
+    <text class='title'>待办</text>
+    </button>
+    </view>
+
+    <view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../message/message'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/c2.png" background-size="cover"></image>
+        </block>
+        <view class='num' wx:if='{{messageNumber>0}}'>{{ messageNumber}}</view>
+    </view>
+    <text class='title'>消息</text>
+    </button>
+    </view>
+    
+     <view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../license/license' wx:if='{{menusPower.licensePower}}'>
+     <!--wx:if='{{menusPower.licensePower}}'-->
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b3.png" background-size="cover"></image>
+        </block>
+        <view class='num' wx:if='{{userAppData["licenses"]>0}}'>{{userAppData['licenses']}}</view>
+    </view>
+    <text class='title'>license</text>
+    </button>
+    </view>
+
+
+<view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../overtime/overtime'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b6.png" background-size="cover"></image>
+        </block>
+       
+    </view>
+    <text class='title'>加班</text>
+    </button>
+    </view>
+
+    <view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../score/score'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b8.png" background-size="cover"></image>
+        </block>
+       
+    </view>
+    <text class='title'>评分</text>
+    </button>
+    </view>
+
+<view class='appItem' hover-class="navigator-active" bindtap='openPage' data-url='../book-borrowing/book-borrowing'>
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b5.png" background-size="cover"></image>
+        </block>
+       
+    </view>
+    <text class='title'>书籍</text>
+    </button>
+    </view>
+ <!-- <view class='appItem' hover-class="navigator-active">
+    <button form-type="submit" class='wrap-btn' plain="true" hover-class="none">
+    <view class='img'>
+      <block>
+            <image  src="../../images/b2.png" background-size="cover"></image>
+        </block>
+        <view class='num'>{{testId}}</view>
+    </view>
+    <text class='title'>test</text>
+    </button>
+    </view>-->
+
+  </view>
+   <!--appList end-->
+<view class='version'>版本号：1.36</view>
+</view>
+</form>

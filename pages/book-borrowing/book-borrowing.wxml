@@ -1,0 +1,56 @@
+<!--pages/book-borrowing/book-borrowing.wxml-->
+<view class='header'>
+ 
+
+
+            <view class='nav'>
+              <view class='nav-item {{currentIndex==0?"active":""}}' data-currentindex='0' bindtap='switchTab'>未归还（{{total0}}）</view>
+              <view class='nav-item {{currentIndex==1?"active":""}}' data-currentindex='1'  bindtap='switchTab'>全部（{{total1}}）</view>
+            </view>
+  </view>
+
+<view class='container'>
+   
+        <view class='item  {{currentIndex==0?"active":""}}'> 
+
+           <view class='book-item clearfix' wx:for='{{noBackBook}}'>
+            <view class='book-item-left'>
+              <view class='book-name'>《{{item.name}}》</view>
+              <view class='book-title'> <text class='already-borrowed'>{{item.days}}天</text></view>
+            </view>
+             <view class='book-item-right'>
+              <block>
+                <image  src="{{item.path}}" background-size="contain"></image>
+              </block>
+             </view>
+           </view>
+
+           
+
+        </view>  
+         <view class='item clearfix  {{currentIndex==1?"active":""}}' bindscrolltolower="bindDownLoad">             
+           <view class='book-item clearfix' bindtap='openPage' wx:for='{{bookData}}' data-id='{{item.id}}' data-state='{{item.state}}'>
+            <view class='book-item-left'>
+              <view class='book-name'>《{{item.name}}》</view>
+              <view class='book-title'>
+                 <text class='beableto-borrowed' wx:if='{{item.state==0}}'> · 可借阅</text>
+                 <text class='borrowing' wx:elif='{{item.state==1}}'><text class='borrowed-name'>{{item.username}}</text> · 借阅中</text>
+              </view>
+            </view>
+             <view class='book-item-right'>
+              <block>
+                <image  src="{{item.path}}" background-size="contain"></image>
+              </block>
+             </view>
+           </view>
+
+
+  
+    </view>  
+  
+ 
+</view>
+<button form-type="submit" bindtap='scanCode'  class='circle-btn' plain="true" hover-class="none">
+<text class='iconfont icon-scancode'></text>
+
+</button>

@@ -1,0 +1,26 @@
+/* pages/book-borrowing/book-borrowing.wxss */
+page{font-size:26rpx}
+.container{padding:0;font-size:26rpx;position:relative;overflow:auto;padding-top:80rpx;background:white;box-sizing:border-box;}
+.header{padding:0rpx 30rpx;background:#D7E8FB;color:#3D8EED;position:fixed;left:0;top:0;width:100%;box-sizing:border-box;z-index:999}
+.header .userInfo{padding-top:40rpx;padding-bottom:40rpx}
+.header .userInfo .avatar{width:80rpx;height:80rpx;border-radius:50%;overflow:hidden;margin:0 auto;display:block;float:left}
+.header .userInfo .userCon{width:500rpx;float:left;padding-left:20rpx}
+.header .userInfo .userCon .username{line-height:40rpx;font-size:28rpx}
+.header .userInfo .userCon .time{line-height:40rpx;color:#3D8EED;font-size:26rpx}
+.nav{height:80rpx}
+.nav .nav-item{width:200rpx;line-height:76rpx;border-bottom:4rpx solid transparent;float:left;text-align:center;height:80rpx;box-sizing:border-box }
+.nav .nav-item.active{border-bottom:4rpx solid #3D8EED;}
+.container .item{width:100%;display:none;overflow:auto;padding:0 30rpx;box-sizing:border-box;overflow-x:hidden}
+.container .item.active{display:block}
+.book-item{border-bottom:1rpx solid #eee;width:710rpx;padding:30rpx 0}
+.book-item-left{width:540rpx;float:left}
+.book-item-left .book-name{line-height:60rpx;font-size:28rpx}
+.book-item-left .book-title{line-height:60rpx;padding-left:10rpx}
+.already-borrowed{color:#FF6600;}
+.beableto-borrowed{color:#3D8EED;}
+.borrowing{color:#00CCAA}
+.borrowed-name{color:#999999}
+.book-item-right{width:150rpx;float:left}
+.book-item-right image{width:120rxp;height:120rpx;}
+button.circle-btn{position:fixed;right:80rpx;bottom:150rpx;border-radius:50%;width:90rpx;height:90rpx;border:none;background:#3e8ef7;box-shadow:3px 3px 5px rgba(62,142,247,0.2); color:white;line-height:90rpx;padding-left:0!important;padding-right:0!important;z-index:99999;}
+button.circle-btn .iconfont{font-size:40rpx!important}

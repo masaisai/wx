@@ -1,0 +1,40 @@
+/* pages/daiban/daiban.wxss */
+@import "../wxParse/wxParse.wxss";
+page{height:100%}
+.container{padding:0;font-size:26rpx;position:relative;}
+.swiper-container{width:750rpx;padding-top:50rpx}
+.swiper-container swiper{width:750rpx;}
+.swiper-container swiper-item{width:750rpx;}
+.swiper-container .swiper-item{width:660rpx;height:100%;background:white;border-radius:10rpx!important;margin:0 auto;overflow:hidden!important}
+
+.daiban{position:relative;height:100%}
+.daiban .top{padding:30rpx;padding-bottom:132rpx;height:100%;box-sizing:border-box;}
+.daiban .top .top-content{height:100%;overflow:auto }
+.daiban .top .top-note{color:#999;text-align:left;line-height:40rpx;margin-bottom:10rpx}
+.daiban .top .top-note-left{width:400rpx;float:left}
+.daiban .top .top-note-left .iconfont{margin-right:10rpx;font-size:28rpx!important}
+.daiban .top .top-note-left .endtime{color:red;margin-left:20rpx}
+.daiban .top .top-note-left .dailytime{margin-left:20rpx}
+.daiban .top .top-note-right{width:200rpx;float:right;text-align:right;color:#3D8EED}
+.daiban .top .userInfo{padding-top:40rpx;padding-bottom:30rpx}
+.daiban .top .userInfo .avatar{width:80rpx;height:80rpx;border-radius:50%;overflow:hidden;margin:0 auto;display:block;float:left}
+.daiban .top .userInfo .userCon{width:500rpx;float:left;padding-left:20rpx}
+.daiban .top .userInfo .userCon .username{line-height:40rpx;font-size:28rpx}
+.daiban .top .userInfo .userCon .time{line-height:40rpx;color:#999;font-size:26rpx}
+.daiban .top .proname{padding:20rpx 0;color:#169BD5}
+.daiban .top .description{color:#999;font-size:26rpx;line-height:36rpx;margin-bottom:40rpx;text-align: left}
+.daiban .top .description text{vertical-align:top}
+
+.daiban .top .common-list{padding:20rpx 0}
+.daiban .top .common-list .common-title{width:180rpx;float:left;color:#999}
+.daiban .top .common-list .common-title .iconfont{margin-right:10rpx;font-size:28rpx!important}
+.daiban .top .common-list .common-content{width:420rpx;float:left}
+.daiban .bottom{position:absolute;left:0;bottom:0;width:100%;z-index:3;background:white;padding:40rpx 0}
+.daiban .bottom .bottom-item{width:33.3333%;float:left;background:#F9F9F9;text-align:center;padding:30rpx 0}
+
+button.primary-round{width:400rpx;height:70rpx;border-radius:35rpx;text-align:center;line-height:70rpx;font-size:28rpx;background:#169BD5!important;padding:0;margin:0rpx auto;border:none}
+button.default-round{width:400rpx;height:70rpx;border-radius:35rpx;text-align:center;line-height:70rpx;font-size:28rpx;padding:0;margin:0rpx auto;border:1px solid #ddd!important}
+.people{width:100rpx;height:100rpx;float:left;text-align:center}
+.people image{width:60rpx;height:60rpx;border-radius:50%;overflow:hidden;margin:0 auto}
+.people .username{line-height:40rpx;font-size:24rpx;text-align:center}
+image{max-width:600rpx!important}
